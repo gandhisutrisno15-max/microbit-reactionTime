@@ -13,4 +13,7 @@
 // Button pins
 #define BUTTON_PIN 0        // Button A on micro:bit
 
+// Score storage
+#define MAX_SCORES 10       // Store up to 10 previous scores
+
 #endif
