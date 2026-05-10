@@ -1,0 +1,22 @@
+# Build directories
+build/
+*.o
+*.a
+*.so
+*.hex
+*.elf
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+mbed-os/
