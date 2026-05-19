@@ -1,100 +1,81 @@
 # SCC.131 Reaction Time Game
 
-A reaction time measurement game implemented for the BBC micro:bit using C/C++ and ARM v7 assembly.
+## BBC micro:bit v2 ARM Assembly Reaction Timer
 
-## Features
+A reaction-time measurement game implemented for the BBC micro:bit v2 using C/C++ and ARM assembly.
 
-- **C/C++ Interface**: User interaction and game flow control
-- **ARM Assembly Timer**: Accurate cycle-based timing using DWT_CYCCNT
-- **Accurate Measurement**: Nanosecond precision using CPU cycle counter
-- **High Score Tracking**: Tracks and displays best reaction time
-- **False Start Detection**: Detects cheating attempts
-- **Audio/Visual Cues**: Sound and LED feedback
+---
 
-## Building
+# Project Overview
 
-### Prerequisites
+This project was developed as part of the SCC.131 coursework assignment.  
+The aim of the project is to create a reaction-time game that combines:
 
-- micro:bit SDK (yotta or mbed-cli)
-- ARM GCC compiler
-- Python 2.7+ (for build tools)
+- C/C++ programming
+- ARM assembly programming
+- hardware interaction on the BBC micro:bit
+- real-time timing measurement
 
-### Build Commands
+The game measures how quickly a player reacts after a visual signal appears on the micro:bit LED display.
 
-```bash
-# Using mbed-cli (Recommended)
-mbed compile -t GCC_ARM -m MICROBIT
+---
 
-# Using yotta
-yotta build
-```
+# Features
 
-### Flashing
+## Core Features
 
-```bash
-# Copy .hex file to micro:bit
-cp BUILD/MICROBIT/GCC_ARM/reaction_time_game.hex /media/MICROBIT/
-```
+- C/C++ game logic using the CODAL runtime
+- ARM assembly timer function
+- Real-time reaction measurement
+- Random delay generation
+- LED matrix feedback
+- Button-based controls
+- micro:bit v2 compatibility
 
-## How to Play
+---
 
-1. Press **Button A** to start the game
-2. Device displays countdown (1-10 seconds)
-3. Listen for audio cue when ready
-4. **Press Button A as quickly as possible**
-5. Your reaction time in milliseconds is displayed
-6. High score is tracked across games
+## Additional Features
 
-## Technical Details
+- High score tracking
+- Average score calculation
+- Statistics display
+- Runtime score history
+- False-start prevention
+- Randomized reaction cue timing
 
-### Part 1: C/C++ Interface (10%)
-- Event-driven button handling
-- Random delay generation (1-10 seconds)
-- Game state management
-- Display output
+---
 
-### Part 2: Assembly Timer (60%)
-- Uses **DWT_CYCCNT** register for cycle counting
-- Polling-based button detection
-- Cycle-to-millisecond conversion
-- Accurate to CPU cycle precision
+# Hardware Used
 
-### Part 3: Integration (10%)
-- Both C++ and assembly work together
-- Seamless function calls between languages
-- Results displayed on micro:bit matrix
+- BBC micro:bit v2
+- ARM Cortex-M4 processor
+- 5x5 LED matrix
+- Button A
+- Button B
 
-### Part 4: Additional Features (10%)
-- High score persistence during runtime
-- False start detection (reacts before cue)
-- Error handling and validation
-- Visual feedback for different game states
+---
 
-## Typical Reaction Times
+# Technologies Used
 
-- **Excellent**: < 150 ms
-- **Good**: 150-250 ms
-- **Average**: 250-300 ms
-- **Slow**: > 300 ms
+| Technology | Purpose |
+|---|---|
+| C++ | Main game logic |
+| ARM Assembly | Reaction timer |
+| CODAL | micro:bit runtime |
+| ARM GCC | Compilation |
+| Python build.py | Build system |
 
-## Marking Scheme
+---
 
-- Part 1: C/C++ Interface (10%)
-- Part 2: Assembly Timer (60%)
-- Part 3: Integration & Flashing (10%)
-- Part 4: Additional Requirement (10%)
-- Code Style & Documentation (5%)
-- Version Control (5%)
+# Project Structure
 
-## Implementation Notes
-
-✅ **DWT_CYCCNT** provides nanosecond-level precision  
-✅ **Polling I/O** chosen for simplicity (can be justified in demo)  
-✅ **Random delay** between 1-10 seconds as required  
-✅ **Error handling** for false starts  
-✅ **High score tracking** as additional feature  
-✅ **Full documentation** and comments included  
-
-## License
-
-This project is for educational purposes only.
+```text
+microbit-v2-samples/
+│
+├── source/
+│   ├── main.cpp
+│   └── timer.s
+│
+├── build.py
+├── libraries/
+└── README.md
