@@ -1,10 +1,23 @@
 # Build directories
 build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Compiled files
 *.o
 *.a
 *.so
-*.hex
 *.elf
+*.bin
+*.hex
+
+# Python virtual environments
+venv/
+myenv/
+__pycache__/
+*.pyc
 
 # IDE files
 .vscode/
@@ -20,3 +33,7 @@ Thumbs.db
 # Dependencies
 node_modules/
 mbed-os/
+
+# Temporary files
+*.log
+*.tmp
